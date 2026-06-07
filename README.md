@@ -4,7 +4,9 @@ This is a small headless Python ACP client. It launches an ACP agent process
 over stdio, initializes the ACP connection, creates/reuses a session, sends a
 prompt, and collects `session/update` events.
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for the project architecture diagrams.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the project architecture diagrams
+and [WEB_SERVER_ARCHITECTURE.md](WEB_SERVER_ARCHITECTURE.md) for the browser UI
+runtime design.
 
 ## Setup
 
@@ -83,6 +85,26 @@ python main.py --agent codex --interactive --cwd /path/to/repo
 ```
 
 Use `/exit` or `/quit` to stop.
+
+## Web Chat UI
+
+Run the local browser UI:
+
+```bash
+python web_server.py --host 127.0.0.1 --port 8765
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8765
+```
+
+The page lets you select an agent, set the workspace `cwd`, configure a custom
+ACP command, choose a permission policy, and chat with the selected agent. The
+server keeps ACP runners alive per browser session and agent settings, so
+multiple turns can reuse the same adapter process. Press Enter to send and
+Shift+Enter to insert a newline.
 
 ## JSON Output
 

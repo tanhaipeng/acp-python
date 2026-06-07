@@ -4,6 +4,9 @@ This project is a small headless ACP client. It starts an ACP-compatible agent
 process over stdio, sends JSON-RPC requests, collects session updates, and
 prints either text or JSON results.
 
+For the browser UI runtime, see
+[WEB_SERVER_ARCHITECTURE.md](WEB_SERVER_ARCHITECTURE.md).
+
 ## System View
 
 ```mermaid
