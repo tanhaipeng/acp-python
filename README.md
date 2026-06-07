@@ -4,6 +4,8 @@ This is a small headless Python ACP client. It launches an ACP agent process
 over stdio, initializes the ACP connection, creates/reuses a session, sends a
 prompt, and collects `session/update` events.
 
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the project architecture diagrams.
+
 ## Setup
 
 ```bash
